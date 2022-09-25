@@ -66,13 +66,14 @@ const updateBook = (req,res,next) => {
         return e.id == req.params.bookId;
     });
     if(bookID.length == 0){
-        // const newBook = {
-        //     title : "",
-        //     id: req.params.bookId,
-        //     author : ""
-        // };
-        // books.books.push(newBook);
-        res.status(404).json({message: `Book not found`});
+        const newBook = {
+            title : "",
+            id: req.params.bookId,
+            author : ""
+        };
+        books.books.push(newBook);
+        res.json({message: `The Book with id ${req.params.bookId} have been successfully Updated `, book: newBook}); 
+        //res.status(404).json({message: `Book not found`});
     }else{
         books.books = books.books.filter(function (e) {
             if(e.id == req.params.bookId){

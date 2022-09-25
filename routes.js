@@ -10,5 +10,4 @@ router.delete("/",routesController.removeAllBooks);
 router.get("/", routesController.gettAllBooks);
 
 
-//export this router to use in our index.js
 module.exports = router;
